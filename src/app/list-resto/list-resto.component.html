@@ -1,0 +1,31 @@
+<h1> List of resturent</h1>
+<p>list-resto works!</p>
+
+<table class="table">
+    <thead>
+      <tr>
+        <th scope="col">id</th>
+        <th scope="col">Resto name</th>
+        <th scope="col">Resto address</th>
+        <th scope="col">email</th>
+        <th scope="col">action</th>
+        
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of collection">
+          <td>{{ item.id }}</td>
+          <td>{{ item.name }}</td>
+          <td>{{ item.address }}</td>
+          <td>{{ item.email }}</td>
+          <td><i (click)="deleteResto(item.id)" class="fa fa-trash" style="font-size:25px;color:red;"></i>
+           <a routerLink="/update/{{item.id}}">
+            <i  class="fa fa-edit" style="font-size:25px;color:black;">
+                </i>
+        </a>
+        </td>
+
+      </tr>
+
+    </tbody>
+  </table>
